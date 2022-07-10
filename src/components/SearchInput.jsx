@@ -1,17 +1,20 @@
 import React from 'react';
 
-export default function SearchInput() {
+// eslint-disable-next-line react/prop-types
+export default function SearchInput({ SetinputSearchTools }) {
+  const handleInputChange = (e) => {
+    SetinputSearchTools(e.target.value);
+  };
   return (
     <div>
       <form>
-        <label htmlFor="tools-filter">
-          Ferramentas
-          <input
-            type="text"
-            name="tools-filter"
-            id="tools-filter"
-          />
-        </label>
+        <input
+          type="text"
+          name="tools-filter"
+          id="tools-filter"
+          placeholder="Buscar Ferramenta"
+          onChange={handleInputChange}
+        />
       </form>
     </div>
   );
