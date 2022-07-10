@@ -1,6 +1,7 @@
 import { Button } from 'antd';
 import React from 'react';
 import 'antd/dist/antd.css';
+import PropTypes from 'prop-types';
 
 export default function InfosModal({ tool }) {
   return (
@@ -14,3 +15,13 @@ export default function InfosModal({ tool }) {
     </div>
   );
 }
+
+InfosModal.propTypes = {
+  tool: PropTypes.shape({
+    icon: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+  }).isRequired,
+
+};
