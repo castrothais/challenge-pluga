@@ -1,7 +1,8 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import ButtonCard from '../components/ButtonCard';
 import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
+import getTools from '../services/request';
 import '../style/Tools.css';
 
 export default function Tools() {
@@ -15,37 +16,20 @@ export default function Tools() {
   const currentTools = tools.slice(startIndex, endIndex);
 
   useEffect(() => {
-    axios.get('https://pluga.co/ferramentas_search.json')
-      .then((response) => {
-        SetTools(response.data);
-      })
-
-      .catch(() => {
-        console.log('Deu Erro');
-      });
+    getTools()
+      .then((response) => SetTools(response));
   }, []);
-
   return (
     <div>
       <Header />
       <SearchInput />
+      <div className="TEST" />
       <div>
         {Array.from(Array(pages), (item, index) => <button type="button" value={index} onClick={(e) => SetCurrentPage(Number(e.target.value))}>{index + 1}</button>)}
       </div>
       <div className="container-tools">
         {currentTools.map((tool) => (
-          <a href={`https://pluga.co/ferramentas/${tool.app_id}/`} className="card-main" style={{ display: 'inline-block' }}>
-            <div className="card-tools">
-              <div className="card-image">
-                <span className="tools-logo">
-                  <img src={tool.icon} alt="Imagem das Ferramentas que a Pluga faz as instegrações" />
-                </span>
-              </div>
-              <div className="infos-tools">
-                {tool.name}
-              </div>
-            </div>
-          </a>
+          <ButtonCard tool={tool} />
         ))}
       </div>
     </div>
