@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
+import PropTypes from 'prop-types';
 import InfosModal from './InfosModal';
 
 const customStyles = {
@@ -22,13 +23,13 @@ export default function ButtonCard({ tool }) {
     setIsOpen(true);
   }
 
-  function afterOpenModal() {
+  const afterOpenModal = () => {
     subtitle.style.color = '#f00';
-  }
+  };
 
-  function closeModal() {
+  const closeModal = () => {
     setIsOpen(false);
-  }
+  };
   return (
     <div style={{ display: 'inline-block' }}>
       <button className="card-main" onClick={openModal} type="button">
@@ -56,3 +57,12 @@ export default function ButtonCard({ tool }) {
     </div>
   );
 }
+
+ButtonCard.propTypes = {
+  tool: PropTypes.shape({
+    icon: PropTypes.string.isRequired,
+    color: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+
+};
