@@ -1,4 +1,5 @@
 import React from 'react';
+import '../style/SearchInput.css';
 
 // eslint-disable-next-line react/prop-types
 export default function SearchInput({ SetinputSearchTools }) {
@@ -7,8 +8,9 @@ export default function SearchInput({ SetinputSearchTools }) {
   };
   return (
     <div>
-      <form>
+      <form className="form-input-search-tool">
         <input
+          className="input-search-tool"
           type="text"
           name="tools-filter"
           id="tools-filter"

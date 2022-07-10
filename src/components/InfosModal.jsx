@@ -1,6 +1,4 @@
-import { Button } from 'antd';
 import React from 'react';
-import 'antd/dist/antd.css';
 import PropTypes from 'prop-types';
 
 export default function InfosModal({ tool }) {
@@ -11,7 +9,6 @@ export default function InfosModal({ tool }) {
       </span>
       <h3>{tool.name}</h3>
       <a href={tool.link} target="_blank" rel="noreferrer">Acessar</a>
-      <Button>Oi</Button>
     </div>
   );
 }

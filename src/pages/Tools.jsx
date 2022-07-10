@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ButtonCard from '../components/ButtonCard';
+import ButtonCard from '../components/ButtonCardTool';
 import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
 import getTools from '../services/request';
@@ -40,9 +40,8 @@ export default function Tools() {
     <div>
       <Header />
       <SearchInput SetinputSearchTools={SetinputSearchTools} />
-      <div className="TEST" />
-      <div>
-        {Array.from(Array(pages), (item, index) => <button type="button" value={index} onClick={(e) => SetCurrentPage(Number(e.target.value))}>{index + 1}</button>)}
+      <div className="div-container-buttons">
+        {Array.from(Array(pages), (item, index) => <button type="button" className="button-pagination" value={index} onClick={(e) => SetCurrentPage(Number(e.target.value))}>{index + 1}</button>)}
       </div>
       <div className="container-tools">
         {currentTools.map((tool) => (
