@@ -1,0 +1,17 @@
+.form-input-search-tool {
+  margin-top: 60px;
+  margin-top: 60px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.input-search-tool{
+  background: #dbdbdb;
+  border-radius: 15px;
+  height: 30px;
+  margin: auto;
+  position: absolute;
+  width: 300px;
+  border: 1px;
+}

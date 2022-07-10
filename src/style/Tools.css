@@ -1,0 +1,55 @@
+.div-container-buttons {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+.button-pagination {
+  margin: 10px;
+}
+
+.container-tools {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+
+}
+
+.card-main {
+    height: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    display: inline-block;
+    margin: 0 17px 35px;
+    padding: 0;
+    background-color: transparent;
+    border: 1px solid rgb(141, 138, 138);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+
+.card-main .card-tools .card-image {
+    height: 70%;
+    width: 100%;
+    position: relative;
+}
+
+.card-main .card-tools .card-image .tools-logo {
+ 
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.tools-logo img {
+  height: 85px;
+  width: 125px;
+}
+
+.card-main .card-tools .infos-tools {
+  color: black;
+  font-style: normal;
+}

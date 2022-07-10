@@ -1,8 +1,10 @@
+import React from 'react';
+import Tools from './pages/Tools';
 
 function App() {
   return (
     <div className="App">
-     <h1>Iniciando o Projeto</h1>
+      <Tools />
     </div>
   );
 }
